@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <title>quiz app</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="question">
+        <input type="text" id="user" placeholder="Enter Your Name">
+        <button id="sq">start quiz</button>
+      </div>
+      <div id="qsection">
+        <div id="qno">
+          <p>Question No.</p>
+          <span><button value="1" id="first">1</button></span>
+          <span><button value="2" id="two">2</button></span>
+          <span><button value="3" id="third">3</button></span>
+          <span><button value="4" id="forth">4</button></span>
+          <span><button value="5" id="fifth">5</button></span>
+          <span><button value="6" id="six">6</button></span>
+          <span><button value="7" id="seven">7</button></span>
+          <span><button value="8" id="eight">8</button></span>
+          <span><button value="9" id="nine">9</button></span>
+          <span><button value="10" id="ten">10</button></span>
+        </div>
+        <div>
+          <button id="sbtn">submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- js start -->
+    <script>
+      //  dec variable ( html select )
+
+      let a = document.getElementById("a"); //
+      let total = 0;
+
+      let startquiz = document.getElementById("sq");
+      let qsection = document.getElementById("qsection");
+      // ******************************************************************************************************************************************
+      let first = document.getElementById("first");
+      let second = document.getElementById("two"); // question numbwe variable dec.
+      let third = document.getElementById("third"); // third question selecting
+      let forth = document.getElementById("forth"); // forth question selecting
+      let fifth = document.getElementById("fifth"); // fifth question selecting
+      let six = document.getElementById("six"); // six question selecting
+      let seven = document.getElementById("seven"); // seven question selecting
+      let eight = document.getElementById("eight"); // eight question selecting
+      let nine = document.getElementById("nine"); // nine question selecting
+      let ten = document.getElementById("ten"); // ten question selecting
+
+      // ******************************************************************************************************************************************
+
+      let question = document.getElementById("question"); // question div select
+
+      startquiz.addEventListener("click", function () {
+        qsection.style.cssText = "display:block";
+        first.style.cssText = "background-color:black;color:white;";
+        let q = `
+            
+            <p>1. &nbsp;&nbsp; What does HTML stand for ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home Tool Markup Language </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hyper Text Markup Language </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hyperlink and Text Markup Language </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hyper Trans Markup Language </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+        let a = document.getElementById("a");
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:red";
+          total = 0;
+        });
+
+        let b = document.getElementById("b");
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:#A9DCAD;";
+          total = total + 1;
+          console.log(total);
+        });
+        let c = document.getElementById("c");
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red";
+          total = 0;
+        });
+
+        let d = document.getElementById("d");
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red";
+          total = 0;
+        });
+      });
+
+      // ******************************************************************************************************************************************
+
+      // second question event here
+
+      second.addEventListener("click", function () {
+        second.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 2. &nbsp;&nbsp; What does HTML stand for ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home Tool Markup Language </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hyper Text Markup Language </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hyperlink and Text Markup Language </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hyper Trans Markup Language </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:#A9DCAD;";
+          total = total + 1;
+          console.log(total);
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:red";
+          total = total;
+          console.log(total);
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red;";
+          total = total;
+          console.log(total);
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+      });
+
+      // ******************************************************************************************************************************************
+      // third question event here
+
+      third.addEventListener("click", function () {
+        third.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 3. &nbsp;&nbsp; Choose the correct HTML element for the largest heading ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; br </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hr </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h6 </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; heading </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:red;";
+          total = total ;
+          console.log(total);
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:red";
+          total = total;
+          console.log(total);
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:#A9DCAD;";
+          total = total+1;
+          console.log(total);
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+      });
+
+      // ******************************************************************************************************************************************
+
+      // forth question event here
+
+      forth.addEventListener("click", function () {
+        forth.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 4. &nbsp;&nbsp; What is the correct HTML element for inserting a line-break ?</p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; br </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lb </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:red;";
+          total = total;
+         
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:#A9DCAD";
+          total = total+1;
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red;";
+          total = total;
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+  
+      });
+
+      // ******************************************************************************************************************************************
+
+      // forth question event here
+
+      fifth.addEventListener("click", function () {
+        fifth.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 5. &nbsp;&nbsp; Which character is used to indicate an end tag ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; < </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; > </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+ 
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:red;";
+          total = total;
+         
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:#A9DCAD";
+          total = total+1;
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red;";
+          total = total;
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+      });
+
+      // ******************************************************************************************************************************************
+
+      // six question event here
+
+      six.addEventListener("click", function () {
+        six.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 6. &nbsp;&nbsp; Which HTML attribute specifies ab alternate text for an image , if the image cannot be displayed ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; longdesc </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alt </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; src </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+ 
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:#A9DCAD;";
+          total = total+1;
+         
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:red";
+          total = total;
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red;";
+          total = total;
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+      });
+
+      // ******************************************************************************************************************************************
+
+      // seven question event here
+
+      seven.addEventListener("click", function () {
+        seven.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 7. &nbsp;&nbsp; Which HTML attribute is used to define inline style ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Class </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; style </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; styles </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:#A9DCAD;";
+          total = total+1;
+         
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:red";
+          total = total;
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red;";
+          total = total;
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+      });
+
+      // ******************************************************************************************************************************************
+
+      // eight question event here
+
+      eight.addEventListener("click", function () {
+        eight.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 8. &nbsp;&nbsp; Which CSS property controls the text size ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  font-style </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  text-size</button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-style  </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+
+    
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:red;";
+          total = total;
+         
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:red";
+          total = total;
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red;";
+          total = total;
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:#A9DCAD;";
+          total = total+1;
+        });
+      });
+
+      // ******************************************************************************************************************************************
+      // nine question event here
+
+      nine.addEventListener("click", function () {
+        nine.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 9. &nbsp;&nbsp; How do you make the text bold ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font:bold ; </button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text:bold; </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight:bold; </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; style:bold; </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+       let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:red;";
+          total = total;
+         
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:red";
+          total = total;
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:#A9DCAD;";
+          total = total+1;
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+      });
+      // ******************************************************************************************************************************************
+
+      // ten question event here
+
+      ten.addEventListener("click", function () {
+        ten.style.cssText = "background-color:black;color:white;";
+
+        let q = `
+            
+            <p> 10. &nbsp;&nbsp; How do you make a list that lists its items with square ? </p>
+             <button value="A" id="a">A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list-style-type :square ;</button>
+             <button value="B" id="b">B. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list=style=type = square; </button>
+             <button value="C" id="c">C. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list-type:square; </button>
+             <button value="D" id="d">D. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list-style:square; </button>
+            
+            `;
+        question.innerHTML = q;
+
+        //  correct option add event for backgeound change
+        let b = document.getElementById("b");
+        let a = document.getElementById("a");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+
+        b.addEventListener("click", function () {
+          b.style.cssText = "background-color:red;";
+          total = total;
+         
+        });
+ 
+        a.addEventListener("click", function () {
+          a.style.cssText = "background-color:#A9DCAD";
+          total = total+1;
+        });
+
+        c.addEventListener("click", function () {
+          c.style.cssText = "background-color:red;";
+          total = total;
+        });
+
+        d.addEventListener("click", function () {
+          d.style.cssText = "background-color:red;";
+          total = total;
+        });
+        
+      });
+      // ******************************************************************************************************************************************
+
+      //  submit btn function
+
+      let sbtn = document.getElementById("sbtn");
+      let user = document.getElementById("user");
+      let score;
+      sbtn.addEventListener("click", function () {
+        qsection.style.cssText = "display:none";
+
+        let h3 = document.getElementById("h3");
+
+        // let q=`
+        //   <h2> ${total} </h2>
+        // `;
+        // question.innerHTML= q;
+        if (total >= 7) {
+          r = `
+          <h3> ${user.value} </h3>
+
+       <h4> your score  = ${total} </h4> 
+       <p style="font-size:30px;text-shadow:1px 1px 2px black;">&#128512 <br> Excellent <br> <button id="rbtn"> Restart </button> </p>
+       <button id="rbtn"> Restart </button>
+
+       
+       `;
+          question.innerHTML = r;
+        question.style.cssText="height:fit-content; padding:10px;";
+
+        }
+        else if(total>=5){
+          r = `
+       <h3> ${user.value}  </h3>
+        <h3> your score = ${total} </h3> 
+        <p style="font-size:60px;text-shadow:1px 1px 2px black;">&#128522 <br> Good  <br> <button id="rbtn"> Restart </button> </p> 
+        <button id="rbtn"> Restart </button>
+     
+       `;
+          question.innerHTML = r;
+          question.style.cssText="height:fit-content; padding:10px;";
+
+
+        }
+        else {
+          r = `
+       <h3> ${user.value}  <br>  <h3> your score = ${total} </h3> </h3>
+       
+        <p style="font-size:60px;text-shadow:1px 1px 2px black;">&#128530 <br> Bad <br> <button id="rbtn"> Restart </button> </p> 
+
+   
+     
+       `;
+          question.innerHTML = r;
+        question.style.cssText="height:fit-content; padding:10px;";
+
+
+        }
+
+        let rbtn = document.getElementById("rbtn");
+        rbtn.style.cssText="width:200px;margin:auto;text-align:center"
+        rbtn.addEventListener("click" , function(){
+             
+              window.location.reload();
+        })
+
+      });
+    </script>
+  </body>
+</html>
